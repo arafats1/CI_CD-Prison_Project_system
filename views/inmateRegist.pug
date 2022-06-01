@@ -1,0 +1,83 @@
+extends layout 
+
+block content 
+    .container.py-4.h-100
+    .row.justify-content-center
+      .col.col-xl-9
+        .card.bg-light
+          .container.col-md-9
+            
+              form.form-horizontal.regform( action='/inmateRegister' method='POST')
+                h2.form-title   Add New Inmate 
+                br
+                .form-group
+                .form-group
+                  label.col-sm-3.control-label(for='numberPlate')
+                    b Inmate Name*
+                  .col-sm-9
+                    input#numberplate.form-control(type='text' placeholder='Full Name' autofocus='' name='name')
+                    #numberplateError.text-danger.font-weight-bold.small
+                  br
+
+                  .form-group
+                  label.col-sm-3.control-label(for='number')
+                    b Age 
+                  .col-sm-9
+                    input#phonenumber.form-control(type='phoneNumber' placeholder='Age' name='age')
+                    #phonenumberError.text-danger.font-weight-bold.small
+                  br
+                  label.col-sm-3.control-label(for='vehicleType')
+                    b Type of Crime
+                  .col-sm-9
+                    select#vehicletype.form-control(name='crime' autofocus='')
+                      option(value='Default' selected='') Click to Select Type of Crime committed
+                      option(value='robery') Robery
+                      option(value='murder') Murder
+                      option(value='theft') Theft
+                      option(value='rape') Rape
+                      option(value='assault') Assault
+                    #vehicletypeError.text-danger.font-weight-bold.small
+                
+                
+                br
+                .form-group
+                  label.col-sm-3.control-label(for='model')
+                    b Next of Kin
+                  .col-sm-9
+                    input#carmodel.form-control(type='text' placeholder='Next of kin' name='kin')
+                    #carmodelError.text-danger.font-weight-bold.small
+              
+                br
+                .form-group
+                  label.col-sm-3.control-label(for='model')
+                    b Next of Kin Contact
+                  .col-sm-9
+                    input#carmodel.form-control(type='text' placeholder='Next of kin contact' name='kinNumber')
+                    #carmodelError.text-danger.font-weight-bold.small
+                br
+                .form-group
+                  label.col-sm-3.control-label(for='entryDate')
+                    b Entry Date
+                  .col-sm-9
+                    input#entryDate.form-control(type='date' name='entryDate')
+                    #entrydateError.text-danger.font-weight-bold.small
+                br
+                .form-group
+                  label.col-sm-3.control-label(for='time')
+                    b Date of Release
+                  .col-sm-9
+                    input#entryTime.form-control(type='date' placeholder='Date of release' name ='releaseDate')
+                    #entrytimeError.text-danger.font-weight-bold.small
+                    
+                br
+              
+
+                .form-group
+                  .col-sm-9.col-sm-offset-3
+                    span.help-block * All fields Required
+                br
+
+                button.btn.btn-primary.btn-block(type='submit' style='margin-left: 150px; background-color:#748010;') Register
+                button.btn.btn-outline-success.logout-button(type='reset' style='margin-left: 10px; border-color:#222d41;') Clear
+
+              script(src='/vehicleValidation.js')

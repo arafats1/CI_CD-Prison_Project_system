@@ -1,0 +1,75 @@
+body{
+    font-family: Calibri, Helvetica, sans-serif;
+   
+}
+    .bg-wrap {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .bg-wrap-reg {
+    overflow: scroll;
+    position: relative;
+  }
+
+  .img-bg {
+    opacity: 0.2;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    
+  }
+
+  .homepage-bg{
+    opacity: 0.1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+  }
+  
+
+.container{
+    padding: 5px;
+}
+
+
+
+
+
+
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+
+.navbar{
+    font-size: 20px;
+    color: black;
+ 
+}
+
+.nav-item{
+    color: black;
+    margin-left: 20px;
+}
+
+.logout-button:hover{
+    background-color: #222d41;
+
+}
+.logout-button{
+    color: black;
+    border-style: solid black;
+}
+
+
+
+
+
+
+

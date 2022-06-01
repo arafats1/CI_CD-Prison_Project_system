@@ -1,0 +1,73 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(href='/bootstrap/css/bootstrap.css' rel='stylesheet')
+  link(href='/styles.css' rel='stylesheet')
+  script(src='/bootstrap/js/bootstrap.js')
+  script(src='/pop.js')
+  title Vehicle Registration
+div
+ 
+  nav.navbar.navbar-expand-lg.navbar-light.bg-light
+    .container
+      a.nav-link.nav-item(href='/home') Home
+      a.nav-link.nav-item(href='/vehicleReg') 
+      button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.nav.me-auto.mb-2.mb-lg-0
+          
+            
+              li
+                a.dropdown-item(href='/signoffReport') 
+        // This is the logout button
+        form.d-flex
+          button.btn.btn-outline-success.logout-button(type='submit' onclick="window.print()" style='margin-right:200px; border-color:#222d41;') Print Report
+          a.btn.btn-outline-success.logout-button(href='/' style='border-color:#222d41;') Logout
+  // End of the nav bar
+  .container.py-5.h-100
+    .container.row.justify-content-center
+      .card.bg-light
+        table.table
+          thead.thead-dark
+            tr
+              
+              th(scope='col' class='th') Name
+              th(scope='col' class='th') Age
+              th(scope='col' class='th') Crime
+              th(scope='col' class='th') Next of Kin
+              th(scope='col' class='th') Next of Kin Contact
+              th(scope='col' class='th') Entry Date
+              th(scope='col' class='th') Release Date
+             
+
+
+          tbody
+            
+            if registers.length 
+            each register in registers
+             tr 
+             
+              td(class='td') #{register.name}  
+              td(class='td') #{register.age}   
+              td(class='td') #{register.crime}
+              td(class='td') #{register.kin}
+              td(class='td') #{register.kinNumber}
+              td(class='td') #{register.entryDate}
+              td(class='td') #{register.releaseDate}
+
+              td 
+
+                  div
+                    a(href='/update/'+register._id )
+                      button.btn.btn-primary(type='button'  data-bs-target='#staticBackdrop' style='background-color:#f1f1f1; margin-right: 5px;')
+                          img(src='../images/edit4.png' style='width: 20px; height: 20px;')
+                
+                          form(method="GET" action="/deleteVehicle/"+register._id)
+                            input(type="hidden" name="delete" value=register._id)
+                            button.btn.btn-danger(type='submit' data-bs-toggle='modal' onclick='myFunction()' data-bs-target='#staticBackdrop')
+                              img(src='../images/delete-332.png' style='width: 20px; height: 20px;')
+                  
+        

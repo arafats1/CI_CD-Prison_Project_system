@@ -1,0 +1,58 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(href='/bootstrap/css/bootstrap.css' rel='stylesheet')
+  link(href='/styles.css' rel='stylesheet')
+  script(src='/bootstrap/js/bootstrap.js')
+  title Vehicle Registration
+div
+ 
+  nav.navbar.navbar-expand-lg.navbar-light.bg-light
+    .container
+      
+      button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.nav.me-auto.mb-2.mb-lg-0
+          li.nav-item.dropdown
+            
+        // This is the logout button
+        form.d-flex
+          a.btn.btn-outline-success.logout-button(href='/' style='border-color:#222d41;') Logout
+  // End of the nav bar
+  .container.py-5.h-100
+    .container.row.justify-content-center
+      .card.bg-light
+  
+  .container.h-100
+    .container.row.justify-content-center
+      .col.col-xl-9
+        .card.bg-light
+          .container.col-md-10
+            .container
+              if register 
+            
+                form(method='POST', action='/update?id='+register._id)
+                  .form-group
+                      label Driver Name:
+                      input.form-control(name='drivername', type='text', value=register.drivername)
+                      br
+                  .form-group
+                      label Number Plate:
+                      input.form-control(name='numberplate', type='text', value=register.numberplate)
+                      br
+                  .form-group
+                      label Parking Period:
+                      input.form-control(name='parkingtime', type='text', value=register.parkingtime)
+                      br
+                  .form-group
+                      label Vehicle Type:
+                      input.form-control(name='carmodel', type='text', value=register.carmodel)
+                      br
+                  .form-group
+                      label Amount:
+                      input.form-control(name='amount', type='text', value=register.amount)
+                      br
+                  input.btn.btn-primary(type='submit' value='Submit')

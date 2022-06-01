@@ -1,0 +1,87 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(href='/bootstrap/css/bootstrap.css' rel='stylesheet')
+  link(href='/styles.css' rel='stylesheet')
+  script(src='/bootstrap/js/bootstrap.js')
+  title Parkville
+div
+  img.img-bg(src='/images/prison.jpg' alt='Image')
+  nav.navbar.navbar-expand-lg.navbar-light.bg-light
+    .container
+      | Already registered? 
+      a.nav-link.nav-item(href='/') Login
+     
+      button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.nav.me-auto.mb-2.mb-lg-0
+          li.nav-item
+         
+            
+            
+        // This is the logout button
+        
+  // End of the nav bar
+  .container.py-5.h-100
+    .container.row.justify-content-center
+      .col.col-xl-9
+        .card.bg-light
+          .container.col-md-10
+            .container
+              form.form-horizontal.regform#formReg(name='register' method='POST' action='/register')
+                h2.form-title Warden Registration
+                br
+                .form-group
+                  label.col-sm-3.control-label(for='firstName') First Name*
+                  .col-sm-9
+                    input#firstname.form-control(type='text' placeholder='First Name'  autofocus='' name='firstname')
+                  #firstnameError.text-danger.font-weight-bold.small
+                  // i commented this work incase you need it
+                  // <div><span id="firstNameError"></span></div>
+                br
+                .form-group
+                  label.col-sm-3.control-label(for='lastName') Last Name*
+                  .col-sm-9
+                    input#lastname.form-control(type='text' placeholder='Last Name' autofocus='' name='lastname')
+                  #lastnameError.text-danger.font-weight-bold.small
+                  // <div><span id="lNameError"></span></div>
+                br
+                .form-group
+                  label.col-sm-3.control-label(for='email') Email
+                  .col-sm-9
+                    input#email.form-control(type='email' placeholder='Email' name='email' autofocus='')
+                  #emailError.text-danger.font-weight-bold.small
+                  // <div><span id="emailError"></span></div>
+                br
+                .form-group
+                  label.col-sm-3.control-label(for='password') Password*
+                  .col-sm-9
+                    input#password.form-control(type='password' placeholder='Password' size='50' onblur='managerPassword(8,20)' name='password' autofocus='')
+                    #passworderror.text-danger.font-weight-bold.small
+                    // <div><small><span id="passwordError"></span></small></div>
+                br
+                .form-group
+                  label.col-sm-3.control-label(for='password') Confirm Password*
+                  .col-sm-9
+                    input#confirmpassword.form-control(type='password' placeholder='Password' size='50' onblur='passwordConfirm()' name='confirmpassword' autofocus='')
+                    #confirmpasserror.text-danger.font-weight-bold.small
+                    // <div><small><span id="passwordError"></span></small></div>
+                  br
+                
+                br
+                button.btn.btn-primary.btn-block(type='submit' style='margin-left: 150px; background-color:#222d41;') Register
+                button.btn.btn-outline-success.logout-button(type='reset' style='margin-left: 10px; border-color:#222d41;') Clear
+              // /form
+            // ./container
+            // Footer
+            footer.page-footer.font-small.blue.bg-light
+              // Copyright
+              .footer-copyright.text-center.py-3
+                | &copy; 2022 Copyright:
+                a(href='/')  Kitalya Maximum Security Prison
+              // Copyright
+            script()
+            // Footer

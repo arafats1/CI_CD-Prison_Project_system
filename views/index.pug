@@ -1,0 +1,55 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(href='/bootstrap/css/bootstrap.css' rel='stylesheet')
+  link(href='/styles.css' rel='stylesheet')
+  title Parkville
+
+.bg-wrap
+  img.img-bg(src='/images/prison.jpg' alt='Image')
+  // This is the form section
+  section.section.vh-100.bg-image
+    .container.py-5.h-100
+      .row.d-flex.justify-content-center.align-items-center.h-100
+        .col.col-xl-10
+          .card(style='border-radius: 1rem;')
+            .row.g-0(style='height: 410px;')
+              // form contents start here
+              // Image section)
+              .col-md-6.col-lg-5.d-none.d-md-block
+                img.img-fluid.img3(src='/images/kitalya.jpg' alt='login form' style='border-radius: 1rem 0 0 1rem; height: 410px; width: 450px;')
+              // end of image section
+              // the Input section or div starts here with a form
+              .col-md-5.col-lg-7.d-flex.align-items-center
+                .card-body.p-4.p-lg-5.text-black
+                  form#signin(method="POST" action="/")
+                    // Login Header
+                    .d-flex.align-items-center.mb-3.pb-1
+                      span.logo-container.h1.mb-0 WARDEN LOGIN
+                    // End of Header
+                    // Email section
+                    .email-section.form-outline.mb-4(data-validate='Valid email is required: ex@abc.xyz')
+                      input#email.e-mail-input.form-control.form-control-lg(type='text' name='email' placeholder='Email' style='font-size: 20px;')
+                    // end of email section
+                    // password input input
+                    .password-section.form-outline.mb-4(data-validate='Password is required')
+                      input#password.password-input.form-control.form-control-lg(type='password' name='password' placeholder='Password' style='font-size: 20px;')
+                      #passwordError.text-danger.font-weight-bold.small
+                    // login Button
+                    .login-button-div
+                      button.login-button.btn.btn-lg.btn-block(style='font-size: 24px; background-color: #748010; color: white;' type="submit")
+                        | Login 
+
+                      script()
+                    // forgot password
+                    .forgot-user
+                      span.txt1(style='font-size: 17px;')
+                        | Forgot &nbsp;
+                      a(style='font-size: 17px; color: #2E4053;' href='#')
+                        | Password &nbsp;
+                      span.txt1(style='font-size: 17px;')
+                        || &nbsp; Not registered? 
+                      a(style='font-size: 17px; color: #2E4053;' href='/register')
+                        | Create an account

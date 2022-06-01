@@ -1,0 +1,42 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(href='/bootstrap/css/bootstrap.css' rel='stylesheet')
+  link(href='/styles.css' rel='stylesheet')
+  script(src='/bootstrap/js/bootstrap.js')
+  title Parkville parking
+div
+  img.img-bg(src='/images/prison.jpg' alt='Image')
+  nav.navbar.navbar-expand-lg.navbar-light.bg-light
+    .container
+      a.nav-link.nav-item(href='/home') Home
+      button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.nav.me-auto.mb-2.mb-lg-0
+          a.nav-link.nav-item(href='/signoff') 
+          li.nav-item.dropdown
+            a#navbarDropdown.nav-link.nav-item.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+              | List of inmates
+            ul.dropdown-menu(aria-labelledby='navbarDropdown')
+              li
+                a.dropdown-item(href='/inmates') Inmates
+             
+        // This is the logout button
+        form.d-flex
+          a.btn.btn-outline-success.logout-button(href='/' style='border-color:#222d41;') Logout
+  // End of the nav bar
+
+  block content 
+
+  br
+// Footer
+footer.page-footer.font-small.blue.bg-light
+  // Copyright
+  .footer-copyright.text-center.py-3
+    | &copy; 2022 Copyright:
+    a(href='/')  Parkville Day and Night Parking
+  // Copyright
+// Footer
