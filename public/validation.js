@@ -178,7 +178,7 @@ const managerRole = ()=>{
         }else{
             role.style.border = "1px solid green"
             roleError.textContent = ""
-        };
+        }
 }
 
 
