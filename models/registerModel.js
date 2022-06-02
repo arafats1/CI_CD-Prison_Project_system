@@ -25,7 +25,7 @@ const registerSchema = mongoose.Schema({
     },
 
     kinNumber: {
-        type: Number,
+        type: String,
         required: true
     },
 
