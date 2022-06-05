@@ -1,3 +1,5 @@
+import pino from 'pino';
+const logger = pino();
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
@@ -75,3 +77,5 @@ application.listen(4000, () => {
     console.log('Listening at port 4000');
 });
 
+
+module.exports = application;
