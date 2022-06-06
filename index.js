@@ -10,10 +10,11 @@ const expressSession = require('express-session')({
     resave: false,
     saveUninitialized: false
   });
+  const uri = process.env.MONGODB_URI;
 
   
 //Defining variables, routes and models
-const config = require('./config/database');
+// const config = require('./config/database');
 const loginPage = require('./routes/loginPage');
 const inmateRegister = require('./routes/inmateRegist');
 const userRegister = require('./routes/register');
@@ -23,17 +24,17 @@ const inmatesReport = require('./routes/inmatesReport');
 const application = express();
 
 //Establishing connection to the database
-mongoose.connect(config.database);
-const db = mongoose.connection;
+// mongoose.connect(config.database);
+// const db = mongoose.connection;
 
 //Testing the connection to the database
-db.once('open', () => {
-    console.log('Successfully connected to the Database');
-});
+// db.once('open', () => {
+//     console.log('Successfully connected to the Database');
+// });
 
-db.on('error', (err) => {
-    console.error(err);
-});
+// db.on('error', (err) => {
+//     console.error(err);
+// });
 
 //Setting the view engine
 application.engine('pug', require('pug').__express);
