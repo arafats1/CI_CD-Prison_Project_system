@@ -1,5 +1,4 @@
-// import pino from 'pino';
-// const logger = pino();
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
@@ -73,8 +72,13 @@ application.get('*', (req, res) => {
   }); 
 
 //Establishing a port to a connection to the database
-application.listen(4000, () => {
-    console.log('Listening at port 4000');
+// application.listen(4000, () => {
+//     console.log('Listening at port 4000');
+// });
+
+const port = process.env.PORT || 5000;
+application.listen(port, () => {
+    console.log(`Listening at port ${port}`);
 });
 
 
