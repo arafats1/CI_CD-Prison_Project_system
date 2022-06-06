@@ -1,4 +1,4 @@
-// module.exports = {
-//     database: 'mongodb://localhost:27017/prisondb',
-//     secret: 'arafat'
-// }
+module.exports = {
+    database: 'mongodb+srv://arafats1:Arafat12345@prison-system.5bhk0sl.mongodb.net/?retryWrites=true&w=majority'
+    // secret: 'arafat'
+}

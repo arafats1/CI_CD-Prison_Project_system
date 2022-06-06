@@ -11,11 +11,11 @@ const expressSession = require('express-session')({
     saveUninitialized: false
   });
 
-//   const { MongoClient } = require("mongodb");
-//   // Connection URI
-// const uri ="mongodb+srv://arafats1:arafat@prison-system.5bhk0sl.mongodb.net/?retryWrites=true&w=majority";
+// const { MongoClient } = require("mongodb");
+// //   // Connection URI
+// const uri ="mongodb+srv://arafats1:Arafat12345@prison-system.5bhk0sl.mongodb.net/?retryWrites=true&w=majority";
 
-// // Create a new MongoClient
+// // // Create a new MongoClient
 // const client = new MongoClient(uri);
 // async function run() {
 //   try {
@@ -36,7 +36,7 @@ const expressSession = require('express-session')({
 
   
 //Defining variables, routes and models
-// const config = require('./config/database');
+const config = require('./config/database');
 const loginPage = require('./routes/loginPage');
 const inmateRegister = require('./routes/inmateRegist');
 const userRegister = require('./routes/register');
@@ -46,17 +46,17 @@ const inmatesReport = require('./routes/inmatesReport');
 const application = express();
 
 //Establishing connection to the database
-// mongoose.connect(config.database);
-// const db = mongoose.connection;
+mongoose.connect(config.database);
+const db = mongoose.connection;
 
 // //Testing the connection to the database
-// db.once('open', () => {
-//     console.log('Successfully connected to the Database');
-// });
+db.once('open', () => {
+    console.log('Successfully connected to the Database');
+});
 
-// db.on('error', (err) => {
-//     console.error(err);
-// });
+db.on('error', (err) => {
+    console.error(err);
+});
 
 //Setting the view engine
 application.engine('pug', require('pug').__express);
