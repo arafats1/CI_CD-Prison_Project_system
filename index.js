@@ -21,6 +21,7 @@ const homepage = require('./routes/homepage');
 const inmatesReport = require('./routes/inmatesReport');
 const application = express();
 
+
 //Establishing connection to the database
 mongoose.connect(config.database);
 const db = mongoose.connection;
